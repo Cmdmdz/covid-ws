@@ -10,8 +10,11 @@ package constant;
  * @author User
  */
 public class BaseUrlConStant {
-
+    
+    // base url
     public static final String BASE_URI = "https://covid19.ddc.moph.go.th/api";
+        
+    // endpoints
     public static final String DEATH_TOLL_DATA =  "/Deaths/weekly-deaths-line-lists"; 
     public static final String TO_DAY_CASE_ALL = "/Cases/today-cases-all"; 
     public static final String REPORT_TIMELINE_ALL_CASE_LATER = "/Cases/timeline-cases-all"; 

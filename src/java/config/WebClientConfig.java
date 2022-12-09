@@ -22,14 +22,14 @@ import javax.ws.rs.core.MediaType;
 public class WebClientConfig {
 
     private final Client client = ClientBuilder.newClient();
-
     public String caseDeath() {
-
+        
         String caseDeath
                 = client.target(BASE_URI)
                         .path(DEATH_TOLL_DATA)
-                        .request(MediaType.APPLICATION_XML)
+                        .request(MediaType.APPLICATION_JSON)
                         .get(String.class);
+        
         return caseDeath;
     }
 
@@ -38,7 +38,7 @@ public class WebClientConfig {
         String caseDeath
                 = client.target(BASE_URI)
                         .path(TO_DAY_CASE_ALL)
-                        .request(MediaType.APPLICATION_XML)
+                        .request(MediaType.APPLICATION_JSON)
                         .get(String.class);
         return caseDeath;
     }
@@ -48,7 +48,7 @@ public class WebClientConfig {
         String caseDeath
                 = client.target(BASE_URI)
                         .path(REPORT_TIMELINE_ALL_CASE_LATER)
-                        .request(MediaType.APPLICATION_XML)
+                        .request(MediaType.APPLICATION_JSON)
                         .get(String.class);
         return caseDeath;
     }
