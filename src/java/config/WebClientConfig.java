@@ -10,6 +10,7 @@ import static constant.BaseUrlConStant.DEATH_TOLL_DATA;
 import static constant.BaseUrlConStant.REPORT_TIMELINE_ALL_CASE_LATER;
 import static constant.BaseUrlConStant.TO_DAY_CASE_ALL;
 
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
@@ -22,19 +23,18 @@ import javax.ws.rs.core.MediaType;
 public class WebClientConfig {
 
     private final Client client = ClientBuilder.newClient();
+
     public String caseDeath() {
-        
         String caseDeath
                 = client.target(BASE_URI)
                         .path(DEATH_TOLL_DATA)
                         .request(MediaType.APPLICATION_JSON)
                         .get(String.class);
-        
+  
         return caseDeath;
     }
 
     public String getToDayCaseAll() {
-
         String caseDeath
                 = client.target(BASE_URI)
                         .path(TO_DAY_CASE_ALL)
@@ -52,5 +52,7 @@ public class WebClientConfig {
                         .get(String.class);
         return caseDeath;
     }
+
+ 
 
 }

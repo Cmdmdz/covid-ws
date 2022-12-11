@@ -5,10 +5,13 @@
  */
 package services;
 
+import config.ConfigDb;
 import config.WebClientConfig;
+import java.util.List;
 
 import javax.jws.WebService;
 import javax.jws.WebMethod;
+import model.CaseDeaths;
 
 /**
  *
@@ -18,6 +21,7 @@ import javax.jws.WebMethod;
 public class CovidService {
 
      WebClientConfig clientConfig;
+     ConfigDb configDb; 
 
     /**
      * This is a sample web service operation
@@ -25,7 +29,7 @@ public class CovidService {
      * @return
      */
     @WebMethod(operationName = "caseDeath")
-    public String caseDeath() {
+    public  String  caseDeath() {
         clientConfig = new WebClientConfig();
         return clientConfig.caseDeath();
     }
@@ -40,6 +44,12 @@ public class CovidService {
     public String getReportTimelineLater() {
         clientConfig = new WebClientConfig();
         return clientConfig.getReportTimelineLater();
+    }
+    
+     @WebMethod(operationName = "findALlCaseDeath")
+    public List<CaseDeaths> caseDeathByDb() {
+        configDb = new ConfigDb();
+        return configDb.getCaseDeath();
     }
 
 }
